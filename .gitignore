@@ -1,0 +1,7 @@
+.env
+node_modules/
+products.json
+products_utf8.json
+fetch_products.js
+update_db.js
+db_backup.json
