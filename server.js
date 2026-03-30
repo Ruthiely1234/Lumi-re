@@ -448,16 +448,7 @@ const htmlContent = `
         .carousel-slide {
             flex: 0 0 33.333%;
             padding: 0 1.5rem;
-            min-width: 320px;
             transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        @media (max-width: 1100px) {
-            .carousel-slide { flex: 0 0 50%; }
-        }
-
-        @media (max-width: 750px) {
-            .carousel-slide { flex: 0 0 100%; }
         }
 
         /* Carousel Navigation */
@@ -1054,12 +1045,45 @@ const htmlContent = `
             to { transform: rotate(360deg); }
         }
 
-        /* Responsividade */
+        /* Responsividade Abrangente */
+        @media (max-width: 1024px) {
+            .carousel-slide { flex: 0 0 50%; }
+            .container { padding: 0 3%; }
+        }
+
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2.5rem; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-            .nav-links { gap: 1.5rem; }
-            .modal { padding: 2rem; }
+            nav { padding: 1.5rem 5%; flex-direction: column; gap: 1.5rem; text-align: center; }
+            .nav-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+            .brand { font-size: 1.8rem; margin-bottom: 0.5rem; }
+            
+            .hero { padding: 4rem 1rem 2rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero p { font-size: 0.95rem; }
+
+            .carousel-slide { flex: 0 0 100%; padding: 0 1rem; }
+            .card-content { padding: 2rem 1.5rem; }
+            .card-title { font-size: 1.8rem; }
+            .card-img-wrapper { height: 320px; }
+
+            .checkout-container, .marketing-assistant-container, .modal { padding: 1.5rem; width: 95%; }
+            .checkout-grid { grid-template-columns: 1fr; }
+            .payment-method-selector { flex-direction: column; gap: 0.8rem; }
+            
+            .admin-header { flex-direction: column; align-items: stretch; gap: 1rem; text-align: center; }
+            .admin-header h2 { font-size: 2rem; }
+            .table-actions { flex-direction: column; width: 100%; }
+            .table-actions .btn { width: 100%; }
+
+            .toast { bottom: 20px; right: 20px; left: 20px; text-align: center; padding: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .brand { font-size: 1.5rem; letter-spacing: 2px; }
+            .nav-links { gap: 0.8rem; }
+            .nav-links button { font-size: 0.75rem; letter-spacing: 1px; }
+            .hero h2 { font-size: 1.8rem; }
+            .card-title { font-size: 1.5rem; }
+            .price { font-size: 1rem; }
         }
 
         /* Marketing Assistant Styles */
@@ -1435,8 +1459,8 @@ const htmlContent = `
 
         // ========== Store Logic ==========
         const updateSlidesVisible = () => {
-            if (window.innerWidth <= 750) slidesVisible = 1;
-            else if (window.innerWidth <= 1100) slidesVisible = 2;
+            if (window.innerWidth <= 768) slidesVisible = 1;
+            else if (window.innerWidth <= 1024) slidesVisible = 2;
             else slidesVisible = 3;
         };
 

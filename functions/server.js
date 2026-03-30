@@ -448,16 +448,7 @@ const htmlContent = `
         .carousel-slide {
             flex: 0 0 33.333%;
             padding: 0 1.5rem;
-            min-width: 320px;
             transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        @media (max-width: 1100px) {
-            .carousel-slide { flex: 0 0 50%; }
-        }
-
-        @media (max-width: 750px) {
-            .carousel-slide { flex: 0 0 100%; }
         }
 
         /* Carousel Navigation */
