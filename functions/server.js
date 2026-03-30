@@ -1345,8 +1345,8 @@ const htmlContent = `
     <script>
         let adminToken = '';
         let stockChartInstance = null;
-        // Ajusta a URL base automaticamente (Netlify vs Local)
-        const BASE_URL = window.location.hostname.includes('localhost') ? '' : '/.netlify/functions/server';
+        // No Netlify, usamos caminhos relativos à raiz pois o netlify.toml redireciona tudo para a função
+        const BASE_URL = '';
         const API_URL = \`\${BASE_URL}/api/products\`;
 
         // Carousel State
